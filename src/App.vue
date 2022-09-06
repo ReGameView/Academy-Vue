@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ModalWindow content="Привет, Мир!"></ModalWindow>
+  <OverLay></OverLay>
+  <Button_Apply text_btn="Кол-во кликов: "></Button_Apply>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Button_Apply from "@/components/btn/ButtonApply";
+import OverLay from "@/components/default/OverLay";
+import ModalWindow from "@/components/modal/ModalWindow";
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Button_Apply,
+    OverLay,
+    ModalWindow
+  },
+  data() {
+    return {
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
