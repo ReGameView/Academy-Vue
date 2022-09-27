@@ -37,6 +37,5 @@ export default {
     border-radius: 2px;
     box-shadow: none;
     cursor: pointer;
-
   }
 </style>

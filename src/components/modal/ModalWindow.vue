@@ -5,7 +5,6 @@
       <span class="close" @click="hide">&times;</span>
         {{ content }}
     </div>
-
   </div>
 </template>
 
@@ -48,8 +47,8 @@ export default {
 }
 </script>
 
-<style scoped>
-/* The Modal (background) */
+<style scoped lang="scss">
+
 .modal {
   z-index: 1001;
   display: none; /* Hidden by default */
@@ -60,33 +59,30 @@ export default {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-}
 
-.modal-open {
-  display: block;
-}
+  &.modal-open {
+    display: block;
+  }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+      &:hover, &:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>

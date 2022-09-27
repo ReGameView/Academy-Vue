@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TextBoxDefault type="text" :placeholder=this.placeholder :value=this.value></TextBoxDefault>
+    <TextBoxDefault type="password" :placeholder=this.placeholder :value=this.value></TextBoxDefault>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import TextBoxDefault from "@/components/textbox/TextBoxDefault";
 
 export default {
-  name: "TextBox",
+  name: "PasswordBox",
   components: {
     TextBoxDefault
   },
@@ -21,12 +21,14 @@ export default {
       required: false,
       type: String
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
-input {
-  border-color: #2575ed;
-}
+  input {
+    border-color: #2575ed;
+  }
+
+
 </style>

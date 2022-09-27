@@ -1,29 +1,25 @@
 <template>
-  <button @click="countable">
-    {{ text_btn }} {{ count }}
-  </button>
+  <ButtonDefault :type=type :title=text_btn>
+  </ButtonDefault>
 </template>
 
 <script>
+import ButtonDefault from "@/components/btn/ButtonDefault";
 export default {
   name: "Button_Apply",
+  components: {ButtonDefault},
   props: {
     text_btn: {
       require: false,
       type: String,
       default: "Текст кнопки"
+    },
+    type: {
+      require: false,
+      type: String,
+      default: 'submit'
     }
   },
-  data() {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    countable: function() {
-      this.count++;
-    }
-  }
 }
 </script>
 
@@ -33,8 +29,8 @@ export default {
     color: rgba(255,255,255,0.9);
     border: 0;
     width: 100%;
-    padding: 2rem;
-    font-size: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
     cursor: pointer;
   }
 </style>

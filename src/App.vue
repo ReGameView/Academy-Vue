@@ -1,27 +1,31 @@
 <template>
-  <ModalWindow content="Привет, Мир!"></ModalWindow>
-  <OverLay></OverLay>
-  <Button_Apply text_btn="Кол-во кликов: "></Button_Apply>
+  <div class="content">
+    <RandomUser></RandomUser>
+    <CreateNote></CreateNote>
+    <ListNote></ListNote>
+  </div>
 </template>
 <script>
-import Button_Apply from "@/components/btn/ButtonApply";
-import OverLay from "@/components/default/OverLay";
-import ModalWindow from "@/components/modal/ModalWindow";
-
+import ListNote from "@/pages/ListNote";
+import RandomUser from "@/users/RandomUser";
+import CreateNote from "@/pages/CreateNote";
 
 export default {
   name: 'App',
   components: {
-    Button_Apply,
-    OverLay,
-    ModalWindow
-  },
-  data() {
-    return {
-    }
+    ListNote,
+    RandomUser,
+    CreateNote
   },
 }
 </script>
 
 <style>
+  .content {
+    margin: 0;
+    left: 0;
+    top: 0;
+    position: relative;
+  }
+
 </style>
