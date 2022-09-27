@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import { store } from "@/store";
-import { User } from "@/user"
+import { notes, ModelNote } from "@/Notes";
+
 import ButtonApply from "@/components/btn/ButtonApply";
 import AlertError from "@/components/alert/AlertError";
 
@@ -27,11 +27,8 @@ export default {
   },
   data() {
     return {
-      store,
-      User,
-      title: '',
-      description: '',
-
+      notes,
+      ModelNote,
 
       messageForError : '',
       errorValidate: false,
@@ -39,13 +36,13 @@ export default {
   },
   methods: {
     validateForm() {
-      if (this.title.length < 2) {
+      if (this.ModelNote.title.length < 2) {
         this.messageForError = "Название меньше 2 символов";
         this.errorValidate = true;
         return false;
       }
 
-      if (this.description.length < 5) {
+      if (this.ModelNote.description.length < 5) {
         this.messageForError = "Описание меньше 5 символов";
         this.errorValidate = true;
         return false;
@@ -57,18 +54,14 @@ export default {
 
     addNote() {
       if(this.validateForm()) {
-        store.Notes.push({
-          title: this.title,
-          description: this.description,
-          user: User
-        })
+        notes.create(this.ModelNote)
       }
     },
     changeTitle(el) {
-      this.title = el.target.value;
+      this.ModelNote.title = el.target.value;
     },
     changeDescription(el) {
-      this.description = el.target.value;
+      this.ModelNote.description = el.target.value;
     }
   }
 }
@@ -78,6 +71,5 @@ export default {
   input {
     width: 95%;
     padding: 1rem;
-
   }
 </style>

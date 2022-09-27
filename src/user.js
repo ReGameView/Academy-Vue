@@ -5,5 +5,9 @@ let full_name = "default_full_name";
 
 export const User = reactive({
     login: login,
-    full_name: full_name
+    full_name: full_name,
+    password: '',
+    create_at: '',
+    update_at: '',
+    delete_at: ''
 })

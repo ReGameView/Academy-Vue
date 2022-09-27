@@ -9,34 +9,48 @@
         Описание
       </th>
       <th>
-        Создатель записи
+        Удалить
       </th>
     </tr>
 
-    <tr v-for="note in store.Notes" v-bind:key="note.title">
+    <tr v-for="note in notes._data" v-bind:key="note.id">
+      <input type="hidden" class="current_id" name="id" :value=note.id>
+
       <td>
-        {{ note.title }}
+        <input type="text" :value=note.title @change=changeNote>
+<!--        {{ note.title }}-->
       </td>
       <td>
         {{ note.description }}
       </td>
       <td>
-        {{ note.user.full_name }}
+        <ButtonError @click=removeNote :data-id=note.id></ButtonError>
       </td>
     </tr>
-
   </table>
 
 </template>
 
 <script>
-import { store } from "@/store.js";
+import { notes } from "@/Notes";
+import ButtonError from "@/components/btn/ButtonError";
 
 export default {
   name: "ListNote",
+  components: {
+    ButtonError
+  },
+  methods: {
+    removeNote(event) {
+      notes.delete(Number.parseInt(event.target.dataset.id));
+    },
+    changeNote(event) {
+      console.log(event.target.parentNode.parentNode.children[0].value);
+    }
+  },
   data() {
     return {
-      store
+      notes
     }
   },
 }
@@ -44,5 +58,21 @@ export default {
 </script>
 
 <style scoped>
+tr {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #444;
+  padding: 2rem
+}
+
+input {
+  border: 0;
+}
+
+input:hover, input:focus, input:active {
+  outline: 1px solid #cbcbcb;
+}
 
 </style>

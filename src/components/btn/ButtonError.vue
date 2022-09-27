@@ -1,5 +1,5 @@
 <template>
-  <ButtonDefault type="qwerty" title="Удалить" ></ButtonDefault>
+  <ButtonDefault type="button" title="Удалить" ></ButtonDefault>
 </template>
 
 <script>
