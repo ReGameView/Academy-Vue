@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "52112458-ec01-49e3-96f0-f7be4c56b8e3",
+		"name": "Z_Academy_Cifra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8917527"
+	},
+	"item": [
+		{
+			"name": "API.User.Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API.User.Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Sergey",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "s.paramonov@rsit.ruq",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwerty",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API.User.Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/user/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API.User.Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Sergey",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "qsergey.paramonov@rsit.ru1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/user/15",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API.User.Destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/user/15",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
