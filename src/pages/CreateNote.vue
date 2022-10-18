@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { notes, ModelNote } from "@/Notes";
+import { notes, ModelNote } from "@/models/Notes";
 
 import ButtonApply from "@/components/btn/ButtonApply";
 import AlertError from "@/components/alert/AlertError";

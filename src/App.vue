@@ -1,22 +1,23 @@
 <template>
-  <div class="content">
-    <RandomUser></RandomUser>
-    <CreateNote></CreateNote>
-    <ListNote></ListNote>
-  </div>
+  <router-view></router-view>
 </template>
 <script>
-import ListNote from "@/pages/ListNote";
-import RandomUser from "@/users/RandomUser";
-import CreateNote from "@/pages/CreateNote";
-
 export default {
   name: 'App',
   components: {
-    ListNote,
-    RandomUser,
-    CreateNote
   },
+  data() {
+    return {
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to) {
+        document.title = to.name;
+      }
+    },
+  }
 }
 </script>
 

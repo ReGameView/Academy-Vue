@@ -1,13 +1,29 @@
 import { reactive } from "vue";
+import { Model } from "@/models/Model";
 
 export const ModelNote = {
-    _table: 'note',
-
-    // PUBLIC PROPERTIES
-    id: 0,
+    ... Model,
     title: '',
     description: '',
 }
+
+export let seederNotes = [
+    {
+        id: 0,
+        title: "Привет",
+        description: "Привет описание"
+    },
+    {
+        id: 1,
+        title: "QWERTY",
+        description: "qwerty"
+    },
+    {
+        id: 2,
+        title: "asd",
+        description: "gfsgfsdg"
+    }
+]
 
 export const notes = reactive({
     ModelNote,
@@ -15,23 +31,7 @@ export const notes = reactive({
     LAST_ID: 5,
 
     // PRIVATE PROPERTIES
-    _data: [
-        {
-            id: 0,
-            title: "Привет",
-            description: "Привет описание"
-        },
-        {
-            id: 1,
-            title: "QWERTY",
-            description: "qwerty"
-        },
-        {
-            id: 2,
-            title: "asd",
-            description: "gfsgfsdg"
-        }
-    ],
+    _data: [ ... seederNotes ],
 
     async create(new_note = ModelNote)
     {
